@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Archivo" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
