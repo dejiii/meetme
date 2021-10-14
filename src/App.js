@@ -1,8 +1,8 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// import Home from "./screens/Home";
-import Dashboard from "./screens/Dashboard";
+import Home from "./screens/Home";
+// import Dashboard from "./screens/Dashboard";
 import Nav from "./component/Nav";
 
 const App = () => {
@@ -10,8 +10,8 @@ const App = () => {
     <div className="App">
       <div className="container">
         <Nav />
-        {/* <Home /> */}
-        <Dashboard />
+        <Home />
+        {/* <Dashboard /> */}
       </div>
     </div>
   );

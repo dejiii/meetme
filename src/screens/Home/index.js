@@ -41,7 +41,9 @@ const Home = () => {
         <FormTrigger onClick={handleShow}>Schedule Meeting Now</FormTrigger>
         <Modal show={show} backdrop="static" onHide={handleClose} centered>
           <Modal.Header closeButton>
-            <Modal.Title>Schedule Meeting</Modal.Title>
+            <Modal.Title>
+              <b>Schedule Meeting</b>
+            </Modal.Title>
           </Modal.Header>
           <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
           <Modal.Footer>
