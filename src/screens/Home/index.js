@@ -7,38 +7,37 @@ import {
   SmallText,
   FormTrigger,
 } from "../../styles/styles";
-import Modal from "react-bootstrap/Modal";
-import Img from "../../img/image.jpeg";
-import TypeWriterEffect from "react-typewriter-effect";
+// import { Modal } from "react-bootstrap";
+import Fade from "react-reveal/Fade";
+import {
+  DatePickerComponent,
+  TimePickerComponent,
+} from "@syncfusion/ej2-react-calendars";
 
 const Home = () => {
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
 
-  const myRef = document.querySelector(".scrollable-div");
+  const [name, setName] = useState();
+  const [dateValue, setDateValue] = useState([]);
+  const [timeValue, setTimeValue] = useState([]);
+
+  // let dateValue = new Date("11/10/21");
+  let minDate = new Date("15/10/2021");
+  let maxDate = new Date("19/10/2021");
+  // const nameValue = new Date("02/05/97s 10:30AM");
 
   return (
     <Flex>
       <HalfWidth>
-        <LargeText>
-          Schedule Meeting with your contacts easily and cut out
-          <i className="slant-texts">
-            {" "}
-            <TypeWriterEffect
-              cursorColor="#06b2b0"
-              typeSpeed={100}
-              scrollArea={myRef}
-              multiText={["time wastage.", "disappointments.", "accidents."]}
-            />
-          </i>
-        </LargeText>
+        <LargeText>Schedule Appointments in few clicks</LargeText>
         <SmallText>
-          MeetMe helps you schedule meeting with your contacts with within few
-          clicks.
+          MeetMe helps you schedule meeting with your contacts in less than a
+          minute
         </SmallText>
-        <FormTrigger onClick={handleShow}>Schedule Meeting Now</FormTrigger>
+        {/* <FormTrigger onClick={handleShow}>Schedule Meeting Now</FormTrigger>
         <Modal show={show} backdrop="static" onHide={handleClose} centered>
           <Modal.Header closeButton>
             <Modal.Title>
@@ -54,10 +53,66 @@ const Home = () => {
               Save Changes
             </button>
           </Modal.Footer>
-        </Modal>
+        </Modal> */}
       </HalfWidth>
       <HalfWidth>
-        <img src={Img} alt="" className="side-image" />
+        <Fade bottom delay={1000}>
+          <div className="form-container">
+            <h3>
+              <b>Setup Appointment</b>
+            </h3>
+            <p>Input a registered name then proceed to select date and time</p>
+            <form className="mt-5">
+              <p>
+                <b>Name</b>
+              </p>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+                className="input-field"
+                placeholder="Your Name"
+              />
+              <p>{name}</p>
+              <p className="mt-3">
+                <b>Select Date</b>
+              </p>
+              <DatePickerComponent
+                id="datepicker"
+                placeholder="Enter date"
+                min={minDate}
+                max={maxDate}
+                value={dateValue}
+                onChange={(e) => {
+                  setDateValue(e.target.value);
+                }}
+              />
+              <p>{dateValue}</p>
+
+              <p className="mt-3">
+                <b>Select Time</b>
+              </p>
+              <TimePickerComponent
+                id="timepicker"
+                value={timeValue}
+                step={60}
+                format={"HH:mm"}
+                onChange={(e) => {
+                  setTimeValue(e.target.value);
+                }}
+              />
+              <FormTrigger
+                type="submit"
+                className="w-100"
+                style={{ backgroundColor: "#f94144" }}
+              >
+                Submit
+              </FormTrigger>
+            </form>
+          </div>
+        </Fade>
       </HalfWidth>
     </Flex>
   );

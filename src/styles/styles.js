@@ -47,13 +47,14 @@ export const HalfWidth = styled.div`
 export const LargeText = styled.p`
   font-weight: bold;
   max-width: 500px;
-  font-size: 45px;
+  font-size: 65px;
   line-height: 1.3em;
-  margin-top: 3.5em;
+  margin-top: 2.5em;
   color: #000;
 
   @media screen and (max-width: 600px) {
-    margin-top: 2em;
+    margin-top: 1.5em;
+    font-size: 35px;
   }
 `;
 

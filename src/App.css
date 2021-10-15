@@ -1,0 +1,33 @@
+@import "../node_modules/@syncfusion/ej2-base/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-buttons/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-lists/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-inputs/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-popups/styles/material.css";
+@import "../node_modules/@syncfusion/ej2-react-calendars/styles/material.css";
+
+.form-container {
+  background-color: #fff;
+  padding: 3em;
+  margin: 80px 50px;
+  border-radius: 20px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.5s ease-in;
+}
+
+.input-field:focus {
+  border: 1px solid #f94144;
+}
+
+@media screen and (max-width: 600px) {
+  .form-container {
+    margin: 20px 0 60px;
+    padding: 25px;
+  }
+}

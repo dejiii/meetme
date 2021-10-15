@@ -13,7 +13,7 @@ const columns = [
 ];
 
 function DataTableBase({ data, ...rest }) {
-  console.log({ data });
+  // console.log({ data });
   return <DataTable columns={columns} data={data} {...rest} />;
 }
 

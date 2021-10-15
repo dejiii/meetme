@@ -11,17 +11,12 @@ body {
   font-family: "Archivo" !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f6f7f8 !important;
+  background-color: #f1f1f1 !important;
 }
 
 .side-image {
   height: calc(100vh - 90px);
   width: 50vw;
-}
-
-.slant-texts {
-  font-weight: bold;
-  color: #06b2b0;
 }
 
 .react-typewriter-text-wrap {
