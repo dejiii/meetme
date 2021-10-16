@@ -67,7 +67,6 @@ const UserTable = () => {
       ))} */}
       <p>{selectedRows}</p>
       <DataTable
-        title="Users"
         column={10}
         data={data}
         selectableRows

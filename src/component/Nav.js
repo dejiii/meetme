@@ -13,7 +13,12 @@ const Nav = ({ loggedIn, setLoggedIn }) => {
     <Header>
       <Logo>
         <span>⏰</span>
-        <span className="ml-5">MeetMe</span>
+        <span
+          className="ml-5"
+          style={{ textAlign: "center", lineHeight: "30px" }}
+        >
+          MeetMe
+        </span>
       </Logo>
       {loggedIn ? (
         <Logout unValidate={unValidate} />

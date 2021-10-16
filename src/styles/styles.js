@@ -10,6 +10,7 @@ export const Header = styled.div`
 
 export const Logo = styled.h1`
   font-size: 2em;
+  margin-top: 10px;
   font-family: "Patrick Hand", cursive !important;
   font-weight: bold;
 `;

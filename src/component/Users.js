@@ -5,7 +5,9 @@ const Users = () => {
   return (
     <div>
       <div className="d-flex justify-content-between">
-        <h3>Users</h3>
+        <h3>
+          <b>Users</b>
+        </h3>
         <NewUser />
       </div>
       <UserTable />
