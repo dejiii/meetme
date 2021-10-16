@@ -118,7 +118,6 @@ const Home = () => {
                   className="input-field"
                   placeholder="Your Name"
                 />
-                <p>{name}</p>
                 <p className="mt-3">
                   <b>Select Date</b>
                 </p>
@@ -132,7 +131,7 @@ const Home = () => {
                     setDateValue(e.target.value);
                   }}
                 />
-                <p>{new Date(dateValue).toLocaleDateString()}</p>
+                {/* <p>{new Date(dateValue).toLocaleDateString()}</p> */}
 
                 <p className="mt-3">
                   <b>Select Time</b>
