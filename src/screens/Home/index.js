@@ -154,8 +154,7 @@ const Home = () => {
                 </FormTrigger>
               </form>
             </div>
-          </Fade>{" "}
-          ;
+          </Fade>
         </HalfWidth>
       </Flex>
       <ToastContainer
