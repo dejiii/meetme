@@ -6,6 +6,9 @@ import { db } from "../firebase";
 import DataTable from "./Table";
 
 const UserTable = () => {
+  const [selectedRows, setSelectedRows] = useState([]);
+  const [toggleCleared, setToggleCleared] = useState(false);
+  // const [data, setData] = useState(tableDataItems);
   const [data, setData] = useState([]);
 
   //   async function getUsers() {
@@ -24,6 +27,36 @@ const UserTable = () => {
     // getUsers().then((res) => setData(res));
   }, []);
 
+  const handleRowSelected = React.useCallback((state) => {
+    setSelectedRows(state.selectedRows);
+  }, []);
+
+  // const contextActions = React.useMemo(() => {
+  //   const handleDelete = () => {
+  //     if (
+  //       window.confirm(
+  //         `Are you sure you want to delete:\r ${selectedRows.map(
+  //           (r) => r.title
+  //         )}?`
+  //       )
+  //     ) {
+  //       setToggleCleared(!toggleCleared);
+  //       setData(differenceBy(data, selectedRows, "title"));
+  //     }
+  //   };
+
+  //   return (
+  //     <Button
+  //       key="delete"
+  //       onClick={handleDelete}
+  //       style={{ backgroundColor: "red" }}
+  //       icon
+  //     >
+  //       Delete
+  //     </Button>
+  //   );
+  // }, [data, selectedRows, toggleCleared]);
+
   return (
     <div className="mt-4">
       {/* {data.map((i) => (
@@ -32,7 +65,17 @@ const UserTable = () => {
           <p>Name: {i.name}</p>
         </div>
       ))} */}
-      <DataTable column={10} data={data} selectableRows pagination />
+      <p>{selectedRows}</p>
+      <DataTable
+        title="Users"
+        column={10}
+        data={data}
+        selectableRows
+        pagination
+        // contextActions={contextActions}
+        onSelectedRowsChange={handleRowSelected}
+        clearSelectedRows={toggleCleared}
+      />
     </div>
   );
 };
